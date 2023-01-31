@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fontes/CANDYRAN.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fontes/FZFWTongQPOPTJW.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/texture/button.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/texture/mainbkg.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/texture/button_hover.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/main.gd" type="Script" id=7]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 7 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -292.0
+margin_top = 128.0
+margin_right = 292.0
+margin_bottom = 285.0
+custom_fonts/font = ExtResource( 1 )
+text = "STPuzzle"
+align = 1
+valign = 1
+
+[node name="Button_Continue" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.5
+margin_top = -6.0
+margin_right = 120.5
+margin_bottom = 51.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="Button_Continue"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.5
+margin_top = -19.5
+margin_right = 71.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 2 )
+text = "继续游戏"
+align = 1
+valign = 1
+
+[node name="Button_Choose" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.5
+margin_top = 64.0
+margin_right = 120.5
+margin_bottom = 121.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="Button_Choose"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.5
+margin_top = -19.5
+margin_right = 71.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 2 )
+text = "选择关卡"
+align = 1
+valign = 1
+
+[node name="Button_Exit" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.5
+margin_top = 134.0
+margin_right = 120.5
+margin_bottom = 191.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="Button_Exit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.5
+margin_top = -19.5
+margin_right = 71.5
+margin_bottom = 19.5
+custom_fonts/font = ExtResource( 2 )
+text = "退出游戏"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Button_Continue" to="." method="_on_Button_Continue_pressed"]
+[connection signal="pressed" from="Button_Choose" to="." method="_on_Button_Choose_pressed"]
+[connection signal="pressed" from="Button_Exit" to="." method="_on_Button_Exit_pressed"]

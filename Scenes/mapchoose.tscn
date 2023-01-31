@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://fontes/Candlescript-Demo-Version.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/mapchoose_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/texture/button.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/mapchoose.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/texture/mainbkg.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/texture/button_hover.png" type="Texture" id=6]
+[ext_resource path="res://fontes/HGZDX_CNKI.tres" type="DynamicFont" id=7]
+
+[sub_resource type="Theme" id=1]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 4 )
+_mapchoose_button = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+texture = ExtResource( 5 )
+stretch_mode = 2
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -549.0
+margin_top = 25.4746
+margin_right = -319.0
+margin_bottom = 79.4746
+custom_fonts/font = ExtResource( 1 )
+text = "STPuzzle"
+align = 1
+valign = 1
+
+[node name="Button_Exit" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 382.0
+margin_top = -274.0
+margin_right = 524.0
+margin_bottom = -226.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="Button_Exit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.0
+margin_top = -16.5
+margin_right = 56.0
+margin_bottom = 16.5
+custom_fonts/font = ExtResource( 7 )
+text = "返回主页"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Button_Exit" to="." method="_on_Button_Exit_pressed"]
